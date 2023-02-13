@@ -9,3 +9,5 @@ https://gyp.gsrc.io/docs/UserDocumentation.md#skeleton-of-a-typical-chromium-gyp
 https://github.com/nodejs/node-addon-api
 
 https://github.com/nodejs/node-addon-examples/tree/main/1_hello_world/node-addon-api
+
+https://webpack.js.org/loaders/node-loader/
