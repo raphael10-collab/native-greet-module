@@ -1,15 +1,29 @@
-import * as webpack from 'webpack'
-import * as webpackDevServer from 'webpack-dev-server'
+//import * as webpackDevServer from 'webpack-dev-server'
+//import path from "path";
+//import { Configuration } from "webpack";
+//import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
-import path from "path";
-import { Configuration } from "webpack";
+const webpack = require("webpack")
+const webpackDevServer = require("webpack-dev-server")
+const path = require("path")
+const Configuration = require("webpack")
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin")
 
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+// https://webpack.js.org/loaders/node-loader/
 
-const config: Configuration = {
+
+const config: typeof Configuration = {
   entry: "./src/index.tsx",
+  target: "node",
+  node: {
+    __dirname: false,
+  },
   module: {
     rules: [
+      {
+        test: /\.node$/,
+        use: 'node-loader',
+      },
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
